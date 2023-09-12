@@ -1,0 +1,28 @@
+﻿@page "/twoway"
+
+<h3>@Title</h3>
+
+<p>Record your favorite color</p>
+<br />
+Name:
+<input @bind="Name" @bind:event="oninput"/>
+<br />
+<br />
+<p>
+    <select @bind="FavoriteColor" >
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="purple">Purple</option>
+    </select>
+</p>
+
+<p>Hi @Name</p>
+<p>Your favorite color was @FavoriteColor!</p>
+
+@code {
+    public string? Title { get; set; } = "Two Way Binding";
+    public string? Name { get; set; }
+    public string? FavoriteColor { get; set; }
+}
